@@ -29,6 +29,7 @@ namespace Papelaria.Controllers
             return View(categorias);
         }
 
+
        // Metodo Create()
         public ActionResult Create(Categoria categoria)
         {
@@ -36,14 +37,6 @@ namespace Papelaria.Controllers
         }
 
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(Categoria categoria)
-        {
-            categoria.CategoriaId = categorias.Select(m => m.CategoriaId).Max() + 1;
-            categorias.Add(categoria);
-            return RedirectToAction("Index");
-        }
 
 
     }
